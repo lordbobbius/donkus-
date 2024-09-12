@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DONKUS CLAN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #1a1a1a;
+            overflow: hidden;
+            color: white;
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .top-bar {
+            width: 100%;
+            background-color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 20;
+            transition: background-color 0.3s;
+        }
+
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+
+        .top-bar a:hover {
+            color: #ff0088;
+        }
+
+        .title {
+            font-size: 60px;
+            font-weight: bold;
+            background: linear-gradient(to right, #ff0000, #ff0088);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 20px 0;
+            top: 20px;
+        }
+
+        .about-box {
+            background-color: grey;
+            padding: 50px;
+            border-radius: 8px;
+            max-width: 700px;
+            text-align: center;
+            color: black;
+            font-size: 20px;
+            bottom: 500px
+        }
+
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        ::selection {
+            color: red;
+            background: pink;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Top Bar with Navigation -->
+    <div class="top-bar">
+        <a href="customize.html">Customize Particles</a>
+    </div>
+
+    <!-- Title -->
+    <h1 class="title">DONKUS CLAN</h1>
+
+    <!-- About Box -->
+    <div class="about-box">
+    you should join donkus clan not just because i want you to but because it is a challenge to those good lurkers out there and it may be the smallest clan but it may also be the most challenging, here we factor in everybodies opinions and there is no one leader only someone voted to represent us, JOIN DONKUS.
+
+        
+         
+    </div>
+    <div class="image">
+<img src="donkus.png" width="510" height="481" alt="donkus">
+        </div>
+    <!-- Particles.js Container -->
+    <div id="particles-js"></div>
+
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        function loadParticlesConfig() {
+            const defaultConfig = {
+                particles: {
+                    number: { value: 150, density: { enable: true, value_area: 1000 } },
+                    color: { value: "#ffffff" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.4, random: true, anim: { enable: true, speed: 1, opacity_min: 0.2, sync: false } },
+                    size: { value: 2.5, random: true, anim: { enable: true, speed: 20, size_min: 0.1, sync: false } },
+                    line_linked: { enable: true, distance: 100, color: "#ffffff", opacity: 0.3, width: 1 },
+                    move: {
+                        enable: true,
+                        speed: 3,
+                        direction: "none",
+                        random: false,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false,
+                        attract: { enable: true, rotateX: 3000, rotateY: 3000 }
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: { enable: true, mode: "attract" },
+                        onclick: { enable: true, mode: "push" },
+                        resize: true
+                    },
+                    modes: {
+                        grab: { distance: 400, line_linked: { opacity: 1 } },
+                        bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+                        repulse: { distance: 50, duration: 0.4 },
+                        push: { particles_nb: 6 },
+                        remove: { particles_nb: 2 }
+                    }
+                },
+                retina_detect: true
+            };
+
+            const savedConfig = JSON.parse(localStorage.getItem('particlesConfig')) || defaultConfig;
+            particlesJS('particles-js', savedConfig);
+        }
+
+        loadParticlesConfig();
+    </script>
+</body>
+</html>
